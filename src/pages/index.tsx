@@ -1,9 +1,11 @@
 import React from 'react'
 import { Container, Text } from "native-base";
+import { connect } from 'react-redux';
 
-export default class Home extends React.Component{
+class Home extends React.Component{
 
     render(){
+        
         return(
             <Container>
                 <Text>Hello world</Text>
@@ -11,3 +13,7 @@ export default class Home extends React.Component{
         )
     }
 }
+
+
+
+export default connect()(Home);

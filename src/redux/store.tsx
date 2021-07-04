@@ -4,6 +4,11 @@ import thunk from "redux-thunk";
 
 import eventsReducer from "./reducers/event";
 
+export interface Dispatch {
+    type: string,
+    payload: any
+}
+
 const rootReducer = combineReducers({
     events: eventsReducer
 })

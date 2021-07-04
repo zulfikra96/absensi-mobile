@@ -1,0 +1,1 @@
+export const ENDPOINT_API: string = "http://localhost"

@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import auth from "./auth";
 
 const Route = createSwitchNavigator({
-    auth:auth
+    auth
 },{
     initialRouteName:"auth"
 })
