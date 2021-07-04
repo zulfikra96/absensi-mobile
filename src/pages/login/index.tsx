@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { Alert } from "react-native";
+import { connect } from "react-redux";
 import View from "./view"
 interface LoginData {
     email?: string,
     password?: string
 }
 
-interface LoginProps { }
+interface LoginProps {
+    navigation: any
+ }
 
 interface LoginState {
     error_message: string,
@@ -16,9 +19,9 @@ interface LoginState {
     password: string
 }
 
-export default class Login extends Component<LoginProps, LoginState>{
+class Login extends Component<LoginProps, LoginState>{
 
-    public initial_state:LoginState = {
+    public initial_state: LoginState = {
         error_message: '',
         error_email: false,
         error_password: false,
@@ -30,7 +33,7 @@ export default class Login extends Component<LoginProps, LoginState>{
         super(props);
         this.state = this.initial_state
     }
-    
+
     /**
      * 
      * @returns View
@@ -72,7 +75,8 @@ export default class Login extends Component<LoginProps, LoginState>{
             },2000)
             return {}
         }
-
+        return this.props.navigation.navigate("app")
     }
 }
 
+export default connect()(Login)

@@ -1,13 +1,15 @@
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Login from "../pages/login";
-
+import Home from "../pages/home";
+import Attendances from "../pages/attendances"
 const AppNavigator = createStackNavigator();
 
 export default () => {
     return (
-        <AppNavigator.Navigator>
-            <AppNavigator.Screen name="Login" component={Login}/>
+        <AppNavigator.Navigator screenOptions={{headerShown:false}}>
+            <AppNavigator.Screen  name="Home" component={Home}/>
+            <AppNavigator.Screen  name="Attendances" component={Attendances}/>
         </AppNavigator.Navigator>
     );
 }
