@@ -9,18 +9,10 @@
  */
 
  import React from 'react';
- import configureStore from './src/redux/store';
+ import configureStore, { persistor } from './src/redux/store';
  import { Provider } from "react-redux"
  import Route from "./src/routes/index"
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
- } from 'react-native';
+ import { PersistGate } from "redux-persist/lib/integration/react"
 
 
  
@@ -28,7 +20,9 @@
  const App = () => {
   return (
     <Provider store={configureStore}>
-      <Route/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+      <PersistGate persistor={persistor}>
+        <Route/>   
+      </PersistGate>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
     </Provider>
   );
  };
